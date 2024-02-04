@@ -19,7 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintVertical_bias="0.127"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/submit"
@@ -32,7 +33,8 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.039"
+        tools:ignore="HardcodedText" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -57,7 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Username"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/username"
@@ -65,7 +68,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                tools:ignore="LabelFor,RtlHardcoded"
+                android:importantForAutofill="no" />
         </TableRow>
 
         <TableRow
@@ -79,7 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Password"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 android:id="@+id/password"
@@ -87,7 +93,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                tools:ignore="LabelFor,RtlHardcoded"
+                android:importantForAutofill="no" />
         </TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
