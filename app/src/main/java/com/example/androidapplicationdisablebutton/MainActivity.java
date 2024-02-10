@@ -18,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String email_pattern = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
         u1 = (EditText) findViewById(R.id.username);
         String uname = u1.getText().toString();
         p1 = (EditText) findViewById(R.id.password);
         String pass = p1.getText().toString();
         Button b = (Button) findViewById(R.id.submit);
+        Button r = (Button) findViewById(R.id.reset);
         b.setEnabled(false);
 //        if(u1.equals("")||p1.equals("")){
 //            b.setEnabled(false);
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(u1.getText().toString().equals("darshan@gmail.com")){
+                if(u1.getText().toString().equals("darshan@gmail.com") && u1.getText().toString().matches(email_pattern)){
                     b.setEnabled(true);
                 }else{
                     b.setEnabled(false);
@@ -107,6 +109,16 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     u1.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 }
+            }
+        });
+        r.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                u1.setText("");
+                p1.setText("");
+                u1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                p1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                Toast.makeText(MainActivity.this, "Reset..", Toast.LENGTH_SHORT).show();
             }
         });
         b.setOnClickListener(new View.OnClickListener() {
